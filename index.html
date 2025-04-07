@@ -1,1019 +1,3553 @@
 <!DOCTYPE html>
-<html lang="ru" data-theme="auto" data-animations="ultra" data-performance="max">
+<html lang="ru" data-theme="light" data-animations="enabled">
 <head>
-    <!-- Quantum Meta -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#FF4D8D">
-    <meta name="description" content="LUMI Quantum - революция в знакомствах с искусственным интеллектом, нейросетевым подбором и квантовыми алгоритмами">
-    <meta name="keywords" content="знакомства, нейросети, AI dating, квантовый подбор, идеальная пара">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LUMI - революционный сервис для осознанных знакомств с интеллектуальным подбором партнеров">
+    <meta name="keywords" content="знакомства, отношения, dating, любовь, встречи, премиум знакомства">
+    <meta property="og:title" content="LUMI Premium | Премиальные знакомства нового поколения">
+    <meta property="og:description" content="Найдите свою идеальную пару с помощью передовых алгоритмов LUMI">
+    <meta property="og:image" content="https://lumi.app/images/social-preview.jpg">
+    <meta property="og:url" content="https://lumi.app">
+    <meta name="twitter:card" content="summary_large_image">
     
-    <!-- Quantum Preload -->
-    <link rel="preload" href="/fonts/Montserrat-VF.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/PlayfairDisplay-VF.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/css/quantum.min.css" as="style">
-    <link rel="preload" href="/js/quantum.js" as="script">
-    <link rel="preload" href="/images/quantum-hero.webp" as="image" media="(min-width: 992px)">
+    <title>LUMI Premium | Премиальные знакомства нового поколения</title>
     
-    <!-- Quantum Icons -->
-    <link rel="manifest" href="/app.webmanifest">
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#FF4D8D">
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" crossorigin>
+    <link rel="preload" href="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" as="image">
+    <link rel="preload" href="/assets/css/main.css" as="style">
     
-    <!-- Quantum CSS -->
-    <style id="quantum-critical">
-        /* Quantum Variables */
+    <!-- Favicon and app icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff4d8d">
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Fonts and icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Critical CSS -->
+    <style>
+        /* ==========================================================================
+           Critical CSS (Above the fold)
+           ========================================================================== */
         :root {
-            --quantum-primary: oklch(70% 0.25 0);
-            --quantum-secondary: oklch(65% 0.25 270);
-            --quantum-accent: oklch(75% 0.2 180);
-            --quantum-text: oklch(20% 0.03 260);
-            --quantum-bg: oklch(99% 0.01 260);
-            --quantum-surface: oklch(95% 0.01 260);
-            --quantum-elevation-1: 0 1px 3px rgba(0,0,0,0.12);
-            --quantum-elevation-2: 0 4px 12px rgba(0,0,0,0.16);
-            --quantum-transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            --primary: #FF4D8D;
+            --primary-light: #FF85AC;
+            --primary-dark: #E8367D;
+            --secondary: #6C5CE7;
+            --secondary-light: #897DEC;
+            --secondary-dark: #5649D1;
+            --accent: #00CEC9;
+            --accent-light: #5CE1E6;
+            --accent-dark: #00A8A5;
+            --text: #2D3436;
+            --text-light: #636E72;
+            --text-lighter: #B2BEC3;
+            --bg: #FDFDFD;
+            --bg-secondary: #F0F3F5;
+            --bg-tertiary: #E5E9EC;
+            --card-bg: #FFFFFF;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --radius: 16px;
+            --radius-small: 8px;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-accent: linear-gradient(135deg, var(--accent), var(--secondary-light));
+            --header-height: 80px;
+            --max-width: 1400px;
+            --animation-duration: 0.6s;
         }
-        
-        /* Quantum Dark Mode */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --quantum-text: oklch(95% 0.01 260);
-                --quantum-bg: oklch(15% 0.01 260);
-                --quantum-surface: oklch(20% 0.01 260);
-            }
+
+        [data-theme="dark"] {
+            --primary: #FF6B9D;
+            --primary-light: #FF9DBD;
+            --primary-dark: #E84D83;
+            --secondary: #7D6BEE;
+            --secondary-light: #9B8DF1;
+            --secondary-dark: #5E4ED6;
+            --accent: #00D8D5;
+            --accent-light: #5CE6E3;
+            --accent-dark: #00B5B2;
+            --text: #F5F6FA;
+            --text-light: #D1D5DB;
+            --text-lighter: #9CA3AF;
+            --bg: #121218;
+            --bg-secondary: #1E1E28;
+            --bg-tertiary: #2A2A38;
+            --card-bg: #1E1E28;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.25);
         }
-        
-        /* Quantum Base */
-        *, *::before, *::after {
-            box-sizing: border-box;
+
+        /* Base styles */
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 6rem;
-            -webkit-text-size-adjust: 100%;
+            font-size: 16px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
         }
-        
+
         body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            color: var(--quantum-text);
-            background-color: var(--quantum-bg);
             overflow-x: hidden;
+            transition: var(--transition);
+            min-height: 100vh;
         }
-        
-        /* Quantum Loading */
-        .quantum-loader {
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Header styles (critical) */
+        header {
             position: fixed;
-            inset: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-height);
+            background: rgba(253, 253, 253, 0.98);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+            will-change: transform, background;
+        }
+
+        [data-theme="dark"] header {
+            background: rgba(30, 30, 40, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            color: var(--text);
+        }
+
+        .logo-icon {
+            margin-right: 0.75rem;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .logo:hover .logo-icon {
+            transform: scale(1.1);
+        }
+
+        /* Hero section (critical) */
+        .hero {
+            min-height: 100vh;
+            height: auto;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: var(--header-height);
+            isolation: isolate;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 77, 141, 0.15), rgba(108, 92, 231, 0.15));
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 42rem;
+            padding: 2rem;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            letter-spacing: -0.025em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 1.25vw, 1.25rem);
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            max-width: 36rem;
+            font-weight: 400;
+        }
+
+        /* Buttons (critical) */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.75rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+            background-size: 200% auto;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+            background-position: right center;
+        }
+
+        /* Loading animation */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             z-index: 9999;
-            display: grid;
-            place-items: center;
-            background: var(--quantum-bg);
-            transition: opacity 0.6s ease, visibility 0.6s ease;
+            transition: opacity 0.5s ease;
+            will-change: opacity;
         }
-        
-        .quantum-loader.hidden {
-            opacity: 0;
-            visibility: hidden;
+
+        .loading-logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            color: var(--text);
         }
-        
-        .quantum-spinner {
-            width: 3rem;
-            height: 3rem;
-            border: 0.25rem solid rgba(var(--quantum-primary), 0.2);
-            border-top-color: var(--quantum-primary);
+
+        .loading-logo-icon {
+            margin-right: 0.75rem;
+            color: var(--primary);
+            animation: pulse 2s infinite;
+        }
+
+        .loading-spinner {
+            width: 3.125rem;
+            height: 3.125rem;
+            border: 5px solid rgba(108, 92, 231, 0.2);
             border-radius: 50%;
+            border-top-color: var(--primary);
             animation: spin 1s linear infinite;
+            will-change: transform;
         }
-        
+
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Focus styles */
+        :focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 4px;
+        }
+
+        /* ==========================================================================
+           Non-critical CSS (loaded after page becomes interactive)
+           ========================================================================== */
+        .non-critical {
+            display: none;
+        }
     </style>
     
-    <link rel="stylesheet" href="/css/quantum.min.css" media="print" onload="this.media='all'">
-    
-    <!-- Quantum Prefetch -->
-    <link rel="prefetch" href="/images/quantum-pattern.svg" as="image">
-    <link rel="prefetch" href="/images/quantum-avatars.webp" as="image">
+    <!-- Non-critical CSS (loaded after page becomes interactive) -->
+    <noscript>
+        <style>
+            .non-critical {
+                display: block;
+            }
+        </style>
+    </noscript>
 </head>
 <body>
-    <!-- Quantum Loader -->
-    <div class="quantum-loader" id="quantumLoader">
-        <div class="quantum-spinner" aria-hidden="true"></div>
-        <span class="sr-only">Загрузка LUMI Quantum...</span>
+    <!-- Loading screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">
+            <span class="loading-logo-icon"><i class="fas fa-heart"></i></span>
+            <span>LUMI</span>
+        </div>
+        <div class="loading-spinner"></div>
     </div>
-    
-    <!-- Quantum App -->
-    <div id="quantumApp">
-        <!-- Quantum Header -->
-        <header class="quantum-header" id="quantumHeader">
-            <div class="quantum-container">
-                <a href="/" class="quantum-logo" aria-label="LUMI Quantum">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                        <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="url(#quantum-logo-gradient)"/>
-                        <path d="M12 16C12 12.6863 14.6863 10 18 10H22C25.3137 10 28 12.6863 28 16V24C28 27.3137 25.3137 30 22 30H18C14.6863 30 12 27.3137 12 24V16Z" fill="white"/>
-                        <defs>
-                            <linearGradient id="quantum-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                                <stop stop-color="var(--quantum-primary)"/>
-                                <stop offset="1" stop-color="var(--quantum-secondary)"/>
-                            </linearGradient>
-                        </defs>
-                    </svg>
-                    <span>LUMI</span>
-                    <sup class="quantum-label">Quantum</sup>
-                </a>
-                
-                <quantum-nav>
-                    <ul class="quantum-nav-list">
-                        <li><a href="#features" class="quantum-nav-link" data-quantum-scroll>Технологии</a></li>
-                        <li><a href="#algorithm" class="quantum-nav-link" data-quantum-scroll>Алгоритм</a></li>
-                        <li><a href="#testimonials" class="quantum-nav-link" data-quantum-scroll>Истории</a></li>
-                        <li><a href="#pricing" class="quantum-nav-link" data-quantum-scroll>Подписка</a></li>
-                    </ul>
-                    
-                    <div class="quantum-nav-actions">
-                        <button class="quantum-button quantum-button--secondary" data-quantum-modal="login">Войти</button>
-                        <button class="quantum-button quantum-button--primary" data-quantum-modal="signup">Регистрация</button>
-                    </div>
-                </quantum-nav>
-                
-                <button class="quantum-menu-toggle" id="quantumMenuToggle" aria-label="Меню" aria-expanded="false">
-                    <span class="quantum-menu-icon"></span>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo" aria-label="LUMI - Главная страница">
+                <span class="logo-icon"><i class="fas fa-heart"></i></span>
+                <span>LUMI</span>
+            </a>
+            
+            <nav class="non-critical">
+                <ul class="nav-links">
+                    <li><a href="#features" class="nav-link">Возможности</a></li>
+                    <li><a href="#how-it-works" class="nav-link">Как это работает</a></li>
+                    <li><a href="#testimonials" class="nav-link">Истории успеха</a></li>
+                    <li><a href="#badges" class="nav-link">Значки</a></li>
+                    <li><a href="#premium" class="nav-link">Premium</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-actions non-critical">
+                <button class="btn btn-outline" id="loginBtn">Войти</button>
+                <button class="btn btn-primary" id="signupBtn">Регистрация</button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Меню">
+                    <i class="fas fa-bars"></i>
                 </button>
             </div>
-        </header>
-        
-        <!-- Quantum Hero -->
-        <section class="quantum-hero" id="quantumHero">
-            <div class="quantum-hero-particles" id="quantumParticles"></div>
-            
-            <div class="quantum-container">
-                <div class="quantum-hero-content">
-                    <h1 class="quantum-hero-title">
-                        <span class="quantum-gradient-text">Квантовая химия</span>
-                        <span>ваших отношений</span>
-                    </h1>
-                    
-                    <p class="quantum-hero-text">
-                        LUMI Quantum использует нейросети и квантовые алгоритмы для поиска идеальной пары с точностью до 99.9%
-                    </p>
-                    
-                    <div class="quantum-hero-actions">
-                        <button class="quantum-button quantum-button--primary quantum-button--lg" data-quantum-modal="signup">
-                            Начать бесплатно
-                        </button>
-                        
-                        <button class="quantum-button quantum-button--text" data-quantum-video="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                <path d="M10 18.5C14.6944 18.5 18.5 14.6944 18.5 10C18.5 5.30558 14.6944 1.5 10 1.5C5.30558 1.5 1.5 5.30558 1.5 10C1.5 14.6944 5.30558 18.5 10 18.5Z" stroke="currentColor" stroke-width="1.5"/>
-                                <path d="M8 7L13 10L8 13V7Z" fill="currentColor"/>
-                            </svg>
-                            Как это работает?
-                        </button>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+        <div class="hero-pattern non-critical"></div>
+        <div class="container non-critical">
+            <div class="hero-content">
+                <h1 class="hero-title">Найдите свою <span class="text-gradient">идеальную пару</span> с LUMI</h1>
+                <p class="hero-subtitle">Революционный сервис знакомств, использующий искусственный интеллект для анализа совместимости на основе психологических профилей, интересов и эмоционального состояния.</p>
+                
+                <div class="hero-buttons non-critical">
+                    <a href="#signup" class="btn btn-primary btn-lg ripple" data-action="signup">
+                        <i class="fas fa-heart mr-1"></i> Начать бесплатно
+                    </a>
+                    <a href="#how-it-works" class="btn btn-outline btn-lg ripple">
+                        <i class="fas fa-play-circle mr-1"></i> Как это работает
+                    </a>
+                </div>
+                
+                <div class="hero-stats non-critical">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div>
+                            <div class="stat-number" data-count="250000">0</div>
+                            <div class="stat-label">Пользователей</div>
+                        </div>
                     </div>
                     
-                    <div class="quantum-hero-stats">
-                        <div class="quantum-stat">
-                            <div class="quantum-stat-value" data-quantum-counter="250">0</div>
-                            <div class="quantum-stat-label">тысяч пользователей</div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-heart"></i>
                         </div>
-                        
-                        <div class="quantum-stat">
-                            <div class="quantum-stat-value" data-quantum-counter="99.9">0</div>
-                            <div class="quantum-stat-label">точность подбора</div>
+                        <div>
+                            <div class="stat-number" data-count="10000">0</div>
+                            <div class="stat-label">Пар ежемесячно</div>
                         </div>
-                        
-                        <div class="quantum-stat">
-                            <div class="quantum-stat-value" data-quantum-counter="10000">0</div>
-                            <div class="quantum-stat-label">пар в месяц</div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <div class="stat-number" data-count="50">0</div>
+                            <div class="stat-label">Стран</div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <div class="hero-media non-critical">
+            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" 
+                 alt="Счастливая пара" 
+                 class="hero-image" 
+                 loading="lazy"
+                 width="1350"
+                 height="900">
+            <div class="hero-app-preview">
+                <img src="https://via.placeholder.com/300x600/FF4D8D/FFFFFF?text=LUMI+App" 
+                     alt="Предпросмотр приложения LUMI" 
+                     class="app-screenshot" 
+                     loading="lazy"
+                     width="300"
+                     height="600">
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust indicators -->
+    <section class="trust-section non-critical">
+        <div class="container">
+            <div class="trust-logos">
+                <img src="https://via.placeholder.com/150x60?text=Forbes" alt="Forbes" loading="lazy" width="150" height="60">
+                <img src="https://via.placeholder.com/150x60?text=TechCrunch" alt="TechCrunch" loading="lazy" width="150" height="60">
+                <img src="https://via.placeholder.com/150x60?text=Bloomberg" alt="Bloomberg" loading="lazy" width="150" height="60">
+                <img src="https://via.placeholder.com/150x60?text=The+Guardian" alt="The Guardian" loading="lazy" width="150" height="60">
+            </div>
+        </div>
+    </section>
+
+    <!-- Основное содержимое (загружается после интерактивности) -->
+    <div class="non-critical">
+        <!-- Особенности -->
+        <section class="section features" id="features">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Почему выбирают LUMI</span>
+                    <h2 class="section-title">Уникальный подход к знакомствам</h2>
+                    <p class="section-description">Мы создали принципиально новый подход к знакомствам, который учитывает все аспекты человеческого общения и психологической совместимости.</p>
+                </div>
                 
-                <div class="quantum-hero-visual">
-                    <div class="quantum-hero-image" data-quantum-parallax="0.2">
-                        <img src="/images/quantum-hero.webp" alt="Счастливые пары LUMI Quantum" width="800" height="600" loading="eager" decoding="async">
+                <div class="features-grid">
+                    <div class="card feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="feature-title">Живые анкеты</h3>
+                        <p class="feature-text">Видео-визитки позволяют увидеть настоящие эмоции человека, его манеру речи и харизму, что невозможно передать через фотографии.</p>
+                        <a href="#" class="feature-link">Узнать больше <i class="fas fa-arrow-right"></i></a>
                     </div>
                     
-                    <div class="quantum-hero-cards">
-                        <div class="quantum-card quantum-card--blur" data-quantum-parallax="0.1">
-                            <div class="quantum-card-content">
-                                <div class="quantum-user">
-                                    <div class="quantum-user-avatar">
-                                        <img src="/images/avatar-1.webp" alt="Анна" width="48" height="48" loading="lazy" decoding="async">
-                                    </div>
-                                    <div class="quantum-user-info">
-                                        <div class="quantum-user-name">Анна, 28</div>
-                                        <div class="quantum-user-bio">Ищу серьезные отношения</div>
-                                    </div>
-                                </div>
+                    <div class="card feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="feature-title">AI Matching</h3>
+                        <p class="feature-text">Наш алгоритм учитывает ваше текущее настроение, психологический профиль и подбирает людей с максимальной совместимостью.</p>
+                        <a href="#" class="feature-link">Узнать больше <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="card feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Карта встреч</h3>
+                        <p class="feature-text">Откройте для себя уютные места в вашем городе и найдите компанию для их посещения с помощью нашей интерактивной карты.</p>
+                        <a href="#" class="feature-link">Узнать больше <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="card feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <h3 class="feature-title">Чат-квесты</h3>
+                        <p class="feature-text">Игровые задания помогут вам быстрее найти общие темы и преодолеть неловкость первых сообщений в увлекательной форме.</p>
+                        <a href="#" class="feature-link">Узнать больше <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="card feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Безопасность</h3>
+                        <p class="feature-text">Многоуровневая система проверки пользователей, автоматическая модерация и функция экстренной помощи.</p>
+                        <a href="#" class="feature-link">Узнать больше <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    
+                    <div class="card feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3 class="feature-title">Персонализация</h3>
+                        <p class="feature-text">Интерфейс, который адаптируется под ваши предпочтения и делает процесс знакомства по-настоящему приятным.</p>
+                        <a href="#" class="feature-link">Узнать больше <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Как это работает -->
+        <section class="section how-it-works" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Просто и эффективно</span>
+                    <h2 class="section-title">Как работает LUMI</h2>
+                    <p class="section-description">Всего 4 простых шага отделяют вас от встречи с интересными людьми, которые действительно вам подходят.</p>
+                </div>
+                
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content card">
+                            <h3 class="step-title">Создайте профиль</h3>
+                            <p class="step-text">Расскажите о себе, добавьте фото и запишите короткое видео-приветствие. Наш алгоритм проанализирует ваши интересы, ценности и личностные качества.</p>
+                            <div class="step-image">
+                                <img src="https://via.placeholder.com/300x200?text=Step+1" alt="Создание профиля" loading="lazy" width="300" height="200">
                             </div>
                         </div>
-                        
-                        <div class="quantum-card quantum-card--blur" data-quantum-parallax="0.15">
-                            <div class="quantum-card-content">
-                                <div class="quantum-match">
-                                    <div class="quantum-match-percent">98%</div>
-                                    <div class="quantum-match-label">Совпадение</div>
-                                </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content card">
+                            <h3 class="step-title">Пройдите тест</h3>
+                            <p class="step-text">Наш психологический тест из 20 вопросов поможет определить ваш тип личности, ценности и предпочтения в отношениях для более точного подбора.</p>
+                            <div class="step-image">
+                                <img src="https://via.placeholder.com/300x200?text=Step+2" alt="Психологический тест" loading="lazy" width="300" height="200">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content card">
+                            <h3 class="step-title">Найдите "созвучие"</h3>
+                            <p class="step-text">Просматривайте предложенные анкеты или попробуйте "Чат-квест" — игровой способ знакомства с интересными заданиями и вопросами.</p>
+                            <div class="step-image">
+                                <img src="https://via.placeholder.com/300x200?text=Step+3" alt="Поиск совпадений" loading="lazy" width="300" height="200">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content card">
+                            <h3 class="step-title">Общайтесь естественно</h3>
+                            <p class="step-text">Используйте "Моменты" для публикации коротких видео о вашей жизни и "Карту встреч" для организации реальных свиданий в уютных местах.</p>
+                            <div class="step-image">
+                                <img src="https://via.placeholder.com/300x200?text=Step+4" alt="Общение" loading="lazy" width="300" height="200">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Quantum Features -->
-        <section class="quantum-section" id="features">
-            <div class="quantum-container">
-                <div class="quantum-section-header">
-                    <h2 class="quantum-section-title">
-                        <span class="quantum-gradient-text">Технологии</span> будущего
-                    </h2>
-                    
-                    <p class="quantum-section-description">
-                        LUMI Quantum использует передовые разработки в области искусственного интеллекта и квантовых вычислений
-                    </p>
-                </div>
-                
-                <div class="quantum-features">
-                    <div class="quantum-feature" data-quantum-animate="fade-up">
-                        <div class="quantum-feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                                <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" stroke="var(--quantum-primary)" stroke-width="2"/>
-                                <path d="M24 16V24L28 28" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        
-                        <h3 class="quantum-feature-title">Квантовый алгоритм</h3>
-                        
-                        <p class="quantum-feature-description">
-                            Анализирует 10,000+ параметров за наносекунды с помощью квантовых вычислений
-                        </p>
-                    </div>
-                    
-                    <div class="quantum-feature" data-quantum-animate="fade-up" data-quantum-delay="100">
-                        <div class="quantum-feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                                <path d="M16 18L24 10L32 18" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16 30L24 38L32 30" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M24 38V10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        
-                        <h3 class="quantum-feature-title">Нейросетевая совместимость</h3>
-                        
-                        <p class="quantum-feature-description">
-                            GPT-4 анализирует ваши сообщения и предсказывает химию отношений
-                        </p>
-                    </div>
-                    
-                    <div class="quantum-feature" data-quantum-animate="fade-up" data-quantum-delay="200">
-                        <div class="quantum-feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                                <path d="M16 16H32V32H16V16Z" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M16 32L24 40L32 32" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M32 16L24 8L16 16" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M8 24L16 16" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M40 24L32 16" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M8 24L16 32" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M40 24L32 32" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        
-                        <h3 class="quantum-feature-title">Биометрический анализ</h3>
-                        
-                        <p class="quantum-feature-description">
-                            Распознавание эмоций по видео и голосу для идеального подбора
-                        </p>
-                    </div>
-                    
-                    <div class="quantum-feature" data-quantum-animate="fade-up" data-quantum-delay="300">
-                        <div class="quantum-feature-icon">
-                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                                <path d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44Z" stroke="var(--quantum-primary)" stroke-width="2"/>
-                                <path d="M24 12V24L30 30" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </div>
-                        
-                        <h3 class="quantum-feature-title">Квантовая защита</h3>
-                        
-                        <p class="quantum-feature-description">
-                            Шифрование данных с помощью квантовой криптографии
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Quantum Algorithm -->
-        <section class="quantum-section quantum-section--alt" id="algorithm">
-            <div class="quantum-container">
-                <div class="quantum-section-header">
-                    <h2 class="quantum-section-title">
-                        <span class="quantum-gradient-text">Квантовый</span> алгоритм подбора
-                    </h2>
-                    
-                    <p class="quantum-section-description">
-                        Наш уникальный алгоритм анализирует вашу личность на квантовом уровне
-                    </p>
-                </div>
-                
-                <div class="quantum-algorithm">
-                    <div class="quantum-algorithm-visual">
-                        <div class="quantum-algorithm-circle" data-quantum-animate="rotate">
-                            <svg width="400" height="400" viewBox="0 0 400 400" fill="none" aria-hidden="true">
-                                <circle cx="200" cy="200" r="180" stroke="var(--quantum-surface)" stroke-width="1"/>
-                                <circle cx="200" cy="200" r="150" stroke="var(--quantum-surface)" stroke-width="1"/>
-                                <circle cx="200" cy="200" r="120" stroke="var(--quantum-surface)" stroke-width="1"/>
-                                <circle cx="200" cy="200" r="90" stroke="var(--quantum-surface)" stroke-width="1"/>
-                                <circle cx="200" cy="200" r="60" stroke="var(--quantum-surface)" stroke-width="1"/>
-                                
-                                <path class="quantum-algorithm-path" d="M200 20C200 20 230 50 260 80C290 110 320 140 350 170C380 200 380 200 350 230C320 260 290 290 260 320C230 350 200 380 200 380C200 380 170 350 140 320C110 290 80 260 50 230C20 200 20 200 50 170C80 140 110 110 140 80C170 50 200 20 200 20Z" stroke="url(#quantum-algorithm-gradient)" stroke-width="2" stroke-linecap="round"/>
-                                
-                                <defs>
-                                    <linearGradient id="quantum-algorithm-gradient" x1="20" y1="20" x2="380" y2="380" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="var(--quantum-primary)"/>
-                                        <stop offset="1" stop-color="var(--quantum-accent)"/>
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                        </div>
-                        
-                        <div class="quantum-algorithm-nodes">
-                            <div class="quantum-algorithm-node" style="--x: 0.8; --y: 0.2;" data-quantum-animate="pulse" data-quantum-delay="0">
-                                <div class="quantum-algorithm-node-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 16V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="quantum-algorithm-node-label">Интересы</div>
-                            </div>
-                            
-                            <div class="quantum-algorithm-node" style="--x: 0.2; --y: 0.3;" data-quantum-animate="pulse" data-quantum-delay="100">
-                                <div class="quantum-algorithm-node-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                        <path d="M22 12H18L15 21L9 3L6 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="quantum-algorithm-node-label">Ценности</div>
-                            </div>
-                            
-                            <div class="quantum-algorithm-node" style="--x: 0.7; --y: 0.7;" data-quantum-animate="pulse" data-quantum-delay="200">
-                                <div class="quantum-algorithm-node-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                        <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="quantum-algorithm-node-label">Личность</div>
-                            </div>
-                            
-                            <div class="quantum-algorithm-node" style="--x: 0.3; --y: 0.8;" data-quantum-animate="pulse" data-quantum-delay="300">
-                                <div class="quantum-algorithm-node-icon">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                        <path d="M8 12H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M12 16V8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <path d="M3 9L12 3L21 9L12 15L3 9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="quantum-algorithm-node-label">Цели</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="quantum-algorithm-content">
-                        <div class="quantum-algorithm-step" data-quantum-animate="fade-right">
-                            <div class="quantum-algorithm-step-number">01</div>
-                            
-                            <div class="quantum-algorithm-step-content">
-                                <h3 class="quantum-algorithm-step-title">Квантовый анализ</h3>
-                                
-                                <p class="quantum-algorithm-step-description">
-                                    Наш алгоритм использует принципы квантовой механики для анализа 10,000+ параметров вашей личности
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="quantum-algorithm-step" data-quantum-animate="fade-right" data-quantum-delay="100">
-                            <div class="quantum-algorithm-step-number">02</div>
-                            
-                            <div class="quantum-algorithm-step-content">
-                                <h3 class="quantum-algorithm-step-title">Нейросетевое обучение</h3>
-                                
-                                <p class="quantum-algorithm-step-description">
-                                    GPT-4 анализирует ваши сообщения, фотографии и видео для определения истинных намерений
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="quantum-algorithm-step" data-quantum-animate="fade-right" data-quantum-delay="200">
-                            <div class="quantum-algorithm-step-number">03</div>
-                            
-                            <div class="quantum-algorithm-step-content">
-                                <h3 class="quantum-algorithm-step-title">Биометрическая верификация</h3>
-                                
-                                <p class="quantum-algorithm-step-description">
-                                    Распознавание эмоций по микровыражениям лица и интонациям голоса
-                                </p>
-                            </div>
-                        </div>
-                        
-                        <div class="quantum-algorithm-step" data-quantum-animate="fade-right" data-quantum-delay="300">
-                            <div class="quantum-algorithm-step-number">04</div>
-                            
-                            <div class="quantum-algorithm-step-content">
-                                <h3 class="quantum-algorithm-step-title">Квантовая сверка</h3>
-                                
-                                <p class="quantum-algorithm-step-description">
-                                    Создание запутанных квантовых состояний для проверки совместимости на фундаментальном уровне
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Quantum Testimonials -->
-        <section class="quantum-section" id="testimonials">
-            <div class="quantum-container">
-                <div class="quantum-section-header">
-                    <h2 class="quantum-section-title">
-                        <span class="quantum-gradient-text">Реальные</span> истории
-                    </h2>
-                    
-                    <p class="quantum-section-description">
-                        Тысячи пар уже нашли друг друга благодаря LUMI Quantum
-                    </p>
-                </div>
-                
-                <div class="quantum-testimonials">
-                    <div class="quantum-testimonials-track" id="quantumTestimonialsTrack">
-                        <div class="quantum-testimonial">
-                            <div class="quantum-testimonial-content">
-                                <div class="quantum-testimonial-quote">
-                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                    </svg>
-                                </div>
-                                
-                                <p class="quantum-testimonial-text">
-                                    LUMI Quantum показал 99% совместимости с Алексеем. Сначала не поверила, но через месяц поняла — алгоритм был прав. Мы идеально подходим друг другу!
-                                </p>
-                                
-                                <div class="quantum-testimonial-author">
-                                    <div class="quantum-testimonial-avatar">
-                                        <img src="/images/avatar-2.webp" alt="Мария" width="56" height="56" loading="lazy" decoding="async">
-                                    </div>
-                                    
-                                    <div class="quantum-testimonial-info">
-                                        <div class="quantum-testimonial-name">Мария и Алексей</div>
-                                        <div class="quantum-testimonial-date">Вместе 1 год</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="quantum-testimonial">
-                            <div class="quantum-testimonial-content">
-                                <div class="quantum-testimonial-quote">
-                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                    </svg>
-                                </div>
-                                
-                                <p class="quantum-testimonial-text">
-                                    Благодаря биометрическому анализу LUMI нашел мне девушку с идеально совместимым темпераментом. Мы с Катериной как две половинки одного целого!
-                                </p>
-                                
-                                <div class="quantum-testimonial-author">
-                                    <div class="quantum-testimonial-avatar">
-                                        <img src="/images/avatar-3.webp" alt="Дмитрий" width="56" height="56" loading="lazy" decoding="async">
-                                    </div>
-                                    
-                                    <div class="quantum-testimonial-info">
-                                        <div class="quantum-testimonial-name">Дмитрий и Екатерина</div>
-                                        <div class="quantum-testimonial-date">Вместе 8 месяцев</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="quantum-testimonial">
-                            <div class="quantum-testimonial-content">
-                                <div class="quantum-testimonial-quote">
-                                    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M16 20H24V28H16V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                        <path d="M24 20H32V28H24V20Z" fill="var(--quantum-primary)"/>
-                                    </svg>
-                                </div>
-                                
-                                <p class="quantum-testimonial-text">
-                                    Нейросеть предсказала наш роман за 2 недели до того, как мы сами это осознали. Спасибо LUMI Quantum за эту магию!
-                                </p>
-                                
-                                <div class="quantum-testimonial-author">
-                                    <div class="quantum-testimonial-avatar">
-                                        <img src="/images/avatar-4.webp" alt="Ольга" width="56" height="56" loading="lazy" decoding="async">
-                                    </div>
-                                    
-                                    <div class="quantum-testimonial-info">
-                                        <div class="quantum-testimonial-name">Ольга и Иван</div>
-                                        <div class="quantum-testimonial-date">Вместе 6 месяцев</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="quantum-testimonials-nav">
-                        <button class="quantum-testimonials-prev" id="quantumTestimonialsPrev" aria-label="Предыдущий отзыв">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+
+        <!-- Видео презентация -->
+        <section class="section video-presentation">
+            <div class="container">
+                <div class="video-container card">
+                    <div class="video-placeholder">
+                        <img src="https://via.placeholder.com/800x450?text=LUMI+Video" alt="Видео презентация LUMI" loading="lazy" width="800" height="450">
+                        <button class="video-play-btn">
+                            <i class="fas fa-play"></i>
                         </button>
+                    </div>
+                    <div class="video-caption">
+                        <h3>Посмотрите, как LUMI меняет подход к знакомствам</h3>
+                        <p>2-минутное видео расскажет о ключевых преимуществах нашего сервиса</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Отзывы -->
+        <section class="section testimonials" id="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Реальные истории</span>
+                    <h2 class="section-title">Наши успешные пары</h2>
+                    <p class="section-description">Что говорят люди, которые нашли друг друга через LUMI и построили крепкие отношения.</p>
+                </div>
+                
+                <div class="testimonials-slider">
+                    <div class="testimonials-track">
+                        <div class="card testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">Мы оба отметили настроение "кофейное утро" и LUMI нас познакомил. Теперь каждое воскресенье начинается с совместного кофе в нашем любимом кафе!</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Анна" class="author-avatar" loading="lazy" width="80" height="80">
+                                <div class="author-info">
+                                    <h4>Анна и Максим</h4>
+                                    <p>Вместе 8 месяцев</p>
+                                    <span class="author-location"><i class="fas fa-map-marker-alt"></i> Москва</span>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <div class="quantum-testimonials-dots" id="quantumTestimonialsDots"></div>
+                        <div class="card testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">Чат-квест с заданием "найти 3 общих хобби" сработал лучше, чем все мои попытки знакомств за последний год! Уже полгода встречаемся с Марией.</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Дмитрий" class="author-avatar" loading="lazy" width="80" height="80">
+                                <div class="author-info">
+                                    <h4>Дмитрий и Мария</h4>
+                                    <p>Вместе 6 месяцев</p>
+                                    <span class="author-location"><i class="fas fa-map-marker-alt"></i> Санкт-Петербург</span>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <button class="quantum-testimonials-next" id="quantumTestimonialsNext" aria-label="Следующий отзыв">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                        <div class="card testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="testimonial-text">Благодаря Карте встреч мы нашли уютное кафе с настольными играми. Отличный способ познакомиться без неловких пауз! Сейчас живём вместе.</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Екатерина" class="author-avatar" loading="lazy" width="80" height="80">
+                                <div class="author-info">
+                                    <h4>Екатерина и Артём</h4>
+                                    <p>Вместе 1 год</p>
+                                    <span class="author-location"><i class="fas fa-map-marker-alt"></i> Казань</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card testimonial-card">
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="testimonial-text">Видео-визитки — это гениально! Сразу видно человека, его эмоции, мимику. Так мы с Игорем поняли, что подходим друг другу, ещё до личной встречи.</p>
+                            <div class="testimonial-author">
+                                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Ольга" class="author-avatar" loading="lazy" width="80" height="80">
+                                <div class="author-info">
+                                    <h4>Ольга и Игорь</h4>
+                                    <p>Вместе 3 месяца</p>
+                                    <span class="author-location"><i class="fas fa-map-marker-alt"></i> Сочи</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonials-nav">
+                        <button class="testimonial-arrow testimonial-prev" aria-label="Предыдущий отзыв">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <div class="testimonial-dots">
+                            <button class="testimonial-dot active" aria-label="Отзыв 1"></button>
+                            <button class="testimonial-dot" aria-label="Отзыв 2"></button>
+                            <button class="testimonial-dot" aria-label="Отзыв 3"></button>
+                            <button class="testimonial-dot" aria-label="Отзыв 4"></button>
+                        </div>
+                        <button class="testimonial-arrow testimonial-next" aria-label="Следующий отзыв">
+                            <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Quantum Pricing -->
-        <section class="quantum-section quantum-section--alt" id="pricing">
-            <div class="quantum-container">
-                <div class="quantum-section-header">
-                    <h2 class="quantum-section-title">
-                        <span class="quantum-gradient-text">Выберите</span> подписку
-                    </h2>
-                    
-                    <p class="quantum-section-description">
-                        Получите доступ ко всем возможностям LUMI Quantum
-                    </p>
+
+        <!-- Значки -->
+        <section class="section badges" id="badges">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Игровые элементы</span>
+                    <h2 class="section-title">Коллекция значков</h2>
+                    <p class="section-description">Получайте уникальные значки за активность и достижения в приложении. Собирайте их все!</p>
                 </div>
                 
-                <div class="quantum-pricing">
-                    <div class="quantum-pricing-card" data-quantum-animate="fade-up">
-                        <div class="quantum-pricing-header">
-                            <h3 class="quantum-pricing-title">Стандарт</h3>
-                            <div class="quantum-pricing-price">0₽ <span>/месяц</span></div>
+                <div class="badges-container">
+                    <div class="card badge-card">
+                        <div class="badge-icon">🌿</div>
+                        <h4 class="badge-name">Новый листок</h4>
+                        <p class="badge-description">За регистрацию в LUMI</p>
+                        <div class="badge-progress">
+                            <div class="progress-bar" style="width: 100%"></div>
                         </div>
-                        
-                        <ul class="quantum-pricing-features">
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Базовый алгоритм подбора
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                5 совпадений в день
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Ограниченный чат
-                            </li>
-                        </ul>
-                        
-                        <button class="quantum-button quantum-button--secondary quantum-button--block">Начать бесплатно</button>
                     </div>
                     
-                    <div class="quantum-pricing-card quantum-pricing-card--featured" data-quantum-animate="fade-up" data-quantum-delay="100">
-                        <div class="quantum-pricing-badge">Популярный</div>
-                        
-                        <div class="quantum-pricing-header">
-                            <h3 class="quantum-pricing-title">Премиум</h3>
-                            <div class="quantum-pricing-price">999₽ <span>/месяц</span></div>
+                    <div class="card badge-card">
+                        <div class="badge-icon">💫</div>
+                        <h4 class="badge-name">Сияющий</h4>
+                        <p class="badge-description">10 дней активности</p>
+                        <div class="badge-progress">
+                            <div class="progress-bar" style="width: 65%"></div>
                         </div>
-                        
-                        <ul class="quantum-pricing-features">
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Квантовый алгоритм подбора
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Неограниченные совпадения
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Полный доступ к чатам
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Биометрический анализ
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Приоритетная поддержка
-                            </li>
-                        </ul>
-                        
-                        <button class="quantum-button quantum-button--primary quantum-button--block">Попробовать 7 дней бесплатно</button>
                     </div>
                     
-                    <div class="quantum-pricing-card" data-quantum-animate="fade-up" data-quantum-delay="200">
-                        <div class="quantum-pricing-header">
-                            <h3 class="quantum-pricing-title">VIP</h3>
-                            <div class="quantum-pricing-price">4999₽ <span>/месяц</span></div>
+                    <div class="card badge-card">
+                        <div class="badge-icon">🔥</div>
+                        <h4 class="badge-name">Горячий</h4>
+                        <p class="badge-description">50 полученных лайков</p>
+                        <div class="badge-progress">
+                            <div class="progress-bar" style="width: 30%"></div>
                         </div>
-                        
-                        <ul class="quantum-pricing-features">
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Персональный AI-ассистент
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Эксклюзивные знакомства
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Проверенные анкеты
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Организация свиданий
-                            </li>
-                            
-                            <li class="quantum-pricing-feature">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="var(--quantum-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                24/7 персональный консьерж
-                            </li>
-                        </ul>
-                        
-                        <button class="quantum-button quantum-button--secondary quantum-button--block">Заказать консультацию</button>
+                    </div>
+                    
+                    <div class="card badge-card">
+                        <div class="badge-icon">🎭</div>
+                        <h4 class="badge-name">Загадочный</h4>
+                        <p class="badge-description">5 анонимных чатов</p>
+                        <div class="badge-progress">
+                            <div class="progress-bar" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card badge-card">
+                        <div class="badge-icon">💖</div>
+                        <h4 class="badge-name">Романтик</h4>
+                        <p class="badge-description">3 успешных свидания</p>
+                        <div class="badge-progress">
+                            <div class="progress-bar" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card badge-card">
+                        <div class="badge-icon">🌎</div>
+                        <h4 class="badge-name">Гражданин мира</h4>
+                        <p class="badge-description">Общение с 5+ странами</p>
+                        <div class="badge-progress">
+                            <div class="progress-bar" style="width: 5%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card badge-card">
+                        <div class="badge-icon">🎮</div>
+                        <h4 class="badge-name">Игрок</h4>
+                        <p class="badge-description">10 завершенных чат-квестов</p>
+                        <div class="badge-progress">
+                            <div class="progress-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="card badge-card">
+                        <div class="badge-icon">🏆</div>
+                        <h4 class="badge-name">Чемпион</h4>
+                        <p class="badge-description">Все достижения</p>
+                        <div class="badge-progress">
+                            <div class="progress-bar" style="width: 15%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Quantum CTA -->
-        <section class="quantum-section quantum-cta">
-            <div class="quantum-container">
-                <div class="quantum-cta-card">
-                    <div class="quantum-cta-content">
-                        <h2 class="quantum-cta-title">
-                            Готовы найти свою <span class="quantum-gradient-text">идеальную пару</span>?
-                        </h2>
-                        
-                        <p class="quantum-cta-description">
-                            Зарегистрируйтесь сейчас и получите 7 дней премиум-доступа бесплатно
-                        </p>
-                        
-                        <div class="quantum-cta-actions">
-                            <button class="quantum-button quantum-button--primary quantum-button--lg" data-quantum-modal="signup">
-                                Начать бесплатно
-                            </button>
-                            
-                            <button class="quantum-button quantum-button--text" data-quantum-scroll="features">
-                                Узнать больше
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </button>
+
+        <!-- Премиум подписка -->
+        <section class="section premium" id="premium">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Расширенные возможности</span>
+                    <h2 class="section-title">LUMI Premium</h2>
+                    <p class="section-description">Получите больше возможностей для поиска идеальной пары с премиум подпиской.</p>
+                </div>
+                
+                <div class="pricing-plans">
+                    <div class="card pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Стандарт</h3>
+                            <div class="pricing-price">
+                                <span class="price-amount">0</span>
+                                <span class="price-currency">₽</span>
+                                <span class="price-period">/месяц</span>
+                            </div>
+                            <p class="pricing-description">Базовые возможности для знакомств</p>
                         </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> 5 лайков в день</li>
+                            <li><i class="fas fa-check"></i> Базовый подбор партнеров</li>
+                            <li><i class="fas fa-check"></i> Ограниченные чат-квесты</li>
+                            <li><i class="fas fa-check"></i> 1 видео-визитка</li>
+                            <li><i class="fas fa-check"></i> Стандартная поддержка</li>
+                        </ul>
+                        <button class="btn btn-outline btn-block">Текущий план</button>
                     </div>
                     
-                    <div class="quantum-cta-image" data-quantum-parallax="0.1">
-                        <img src="/images/quantum-cta.webp" alt="Счастливая пара" width="400" height="300" loading="lazy" decoding="async">
+                    <div class="card pricing-card featured">
+                        <div class="pricing-badge">Рекомендуем</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Премиум</h3>
+                            <div class="pricing-price">
+                                <span class="price-amount">990</span>
+                                <span class="price-currency">₽</span>
+                                <span class="price-period">/месяц</span>
+                            </div>
+                            <p class="pricing-description">Полный доступ ко всем функциям</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Неограниченные лайки</li>
+                            <li><i class="fas fa-check"></i> Приоритетный показ анкет</li>
+                            <li><i class="fas fa-check"></i> Все чат-квесты доступны</li>
+                            <li><i class="fas fa-check"></i> До 5 видео-визиток</li>
+                            <li><i class="fas fa-check"></i> Расширенная аналитика</li>
+                            <li><i class="fas fa-check"></i> Премиум поддержка 24/7</li>
+                            <li><i class="fas fa-check"></i> Эксклюзивные значки</li>
+                        </ul>
+                        <button class="btn btn-primary btn-block">Выбрать Premium</button>
+                    </div>
+                    
+                    <div class="card pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-title">Годовой</h3>
+                            <div class="pricing-price">
+                                <span class="price-amount">7,990</span>
+                                <span class="price-currency">₽</span>
+                                <span class="price-period">/год</span>
+                            </div>
+                            <p class="pricing-description">Экономия 33% по сравнению с месячным планом</p>
+                        </div>
+                        <ul class="pricing-features">
+                            <li><i class="fas fa-check"></i> Все преимущества Premium</li>
+                            <li><i class="fas fa-check"></i> Эксклюзивные функции</li>
+                            <li><i class="fas fa-check"></i> Персональный менеджер</li>
+                            <li><i class="fas fa-check"></i> VIP доступ к событиям</li>
+                            <li><i class="fas fa-check"></i> Годовой значок</li>
+                        </ul>
+                        <button class="btn btn-outline btn-block">Выбрать Годовой</button>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- Quantum Footer -->
-        <footer class="quantum-footer">
-            <div class="quantum-container">
-                <div class="quantum-footer-grid">
-                    <div class="quantum-footer-col">
-                        <a href="/" class="quantum-footer-logo" aria-label="LUMI Quantum">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-                                <path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40Z" fill="url(#quantum-logo-gradient)"/>
-                                <path d="M12 16C12 12.6863 14.6863 10 18 10H22C25.3137 10 28 12.6863 28 16V24C28 27.3137 25.3137 30 22 30H18C14.6863 30 12 27.3137 12 24V16Z" fill="white"/>
-                                <defs>
-                                    <linearGradient id="quantum-logo-gradient" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-                                        <stop stop-color="var(--quantum-primary)"/>
-                                        <stop offset="1" stop-color="var(--quantum-secondary)"/>
-                                    </linearGradient>
-                                </defs>
-                            </svg>
-                            <span>LUMI</span>
-                            <sup class="quantum-label">Quantum</sup>
-                        </a>
-                        
-                        <p class="quantum-footer-text">
-                            Квантовая революция в знакомствах. © 2023 LUMI Technologies.
-                        </p>
-                        
-                        <div class="quantum-footer-social">
-                            <a href="#" class="quantum-social-link" aria-label="VK">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M12.65 6C8.253 6 6 8.253 6 12.65V17.35C6 21.747 8.253 24 12.65 24H17.35C21.747 24 24 21.747 24 17.35V12.65C24 8.253 21.747 6 17.35 6H12.65Z" fill="currentColor"/>
-                                    <path d="M16.5 12.8571C16.5 12.8571 17.3571 12 18 12H18.6429C18.8571 12 19.0714 12.2143 19.0714 12.4286V13.2857C19.0714 13.5 18.8571 13.7143 18.6429 13.7143H18.4286C18.2143 13.7143 18 13.9286 18 14.1429V16.2857C18 16.5 17.7857 16.7143 17.5714 16.7143H17.3571C17.1429 16.7143 16.9286 16.5 16.9286 16.2857V14.1429C16.9286 13.9286 16.7143 13.7143 16.5 13.7143H15.6429V16.2857C15.6429 16.5 15.4286 16.7143 15.2143 16.7143H14.7857C14.5714 16.7143 14.3571 16.5 14.3571 16.2857V13.2857C14.3571 13.0714 14.5714 12.8571 14.7857 12.8571H16.5Z" fill="var(--quantum-bg)"/>
-                                    <path d="M13.0714 12.8571H13.9286V16.2857C13.9286 16.5 13.7143 16.7143 13.5 16.7143H13.0714C12.8571 16.7143 12.6429 16.5 12.6429 16.2857V12.8571H13.0714Z" fill="var(--quantum-bg)"/>
-                                    <path d="M13.5 12C13.9142 12 14.25 12.3358 14.25 12.75C14.25 13.1642 13.9142 13.5 13.5 13.5C13.0858 13.5 12.75 13.1642 12.75 12.75C12.75 12.3358 13.0858 12 13.5 12Z" fill="var(--quantum-bg)"/>
-                                </svg>
-                            </a>
-                            
-                            <a href="#" class="quantum-social-link" aria-label="Telegram">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="currentColor"/>
-                                    <path d="M8.5 12.5L10.5 14.5L15.5 9.5" stroke="var(--quantum-bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M16 9L10 14" stroke="var(--quantum-bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M8.5 12.5L15.5 9.5" stroke="var(--quantum-bg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
-                            
-                            <a href="#" class="quantum-social-link" aria-label="YouTube">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M21.582 7.191C21.8489 8.1637 21.8489 9.1863 21.582 10.159C21.196 11.592 20.154 12.634 18.721 13.02C17.7483 13.2869 16.7257 13.2869 15.753 13.02H15.691C14.258 12.634 13.216 11.592 12.83 10.159C12.5631 9.1863 12.5631 8.1637 12.83 7.191C13.216 5.758 14.258 4.716 15.691 4.33C16.6637 4.0631 17.6863 4.0631 18.659 4.33C20.092 4.716 21.134 5.758 21.52 7.191H21.582Z" fill="currentColor"/>
-                                    <path d="M10.5 9L14 11.5L10.5 14V9Z" fill="var(--quantum-bg)"/>
-                                </svg>
-                            </a>
-                            
-                            <a href="#" class="quantum-social-link" aria-label="Instagram">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                                    <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="currentColor"/>
-                                    <path d="M17 6H7C6.44772 6 6 6.44772 6 7V17C6 17.5523 6.44772 18 7 18H17C17.5523 18 18 17.5523 18 17V7C18 6.44772 17.5523 6 17 6Z" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M17.5 8C17.7761 8 18 7.77614 18 7.5C18 7.22386 17.7761 7 17.5 7C17.2239 7 17 7.22386 17 7.5C17 7.77614 17.2239 8 17.5 8Z" fill="var(--quantum-bg)"/>
-                                </svg>
-                            </a>
+
+        <!-- Часто задаваемые вопросы -->
+        <section class="section faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Нужна помощь?</span>
+                    <h2 class="section-title">Часто задаваемые вопросы</h2>
+                </div>
+                
+                <div class="faq-accordion">
+                    <div class="card faq-item">
+                        <button class="faq-question">
+                            <span>Как работает алгоритм подбора партнеров?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Наш алгоритм использует комбинацию факторов: психологический профиль (на основе теста), ваши предпочтения, текущее эмоциональное состояние, поведенческие паттерны и историю взаимодействий. Чем больше вы используете LUMI, тем точнее становятся рекомендации.</p>
                         </div>
                     </div>
                     
-                    <div class="quantum-footer-col">
-                        <h3 class="quantum-footer-title">LUMI Quantum</h3>
-                        
-                        <ul class="quantum-footer-links">
-                            <li><a href="#" class="quantum-footer-link">О технологии</a></li>
-                            <li><a href="#" class="quantum-footer-link">Как это работает</a></li>
-                            <li><a href="#" class="quantum-footer-link">Отзывы</a></li>
-                            <li><a href="#" class="quantum-footer-link">Безопасность</a></li>
-                            <li><a href="#" class="quantum-footer-link">Вакансии</a></li>
-                        </ul>
+                    <div class="card faq-item">
+                        <button class="faq-question">
+                            <span>Можно ли использовать LUMI для дружеского общения?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Да, в настройках профиля вы можете указать, что ищете: серьезные отношения, дружеское общение или что-то среднее. Алгоритм будет учитывать это при подборе партнеров.</p>
+                        </div>
                     </div>
                     
-                    <div class="quantum-footer-col">
-                        <h3 class="quantum-footer-title">Помощь</h3>
-                        
-                        <ul class="quantum-footer-links">
-                            <li><a href="#" class="quantum-footer-link">Центр поддержки</a></li>
-                            <li><a href="#" class="quantum-footer-link">Правила</a></li>
-                            <li><a href="#" class="quantum-footer-link">Конфиденциальность</a></li>
-                            <li><a href="#" class="quantum-footer-link">Условия</a></li>
-                            <li><a href="#" class="quantum-footer-link">Контакты</a></li>
-                        </ul>
+                    <div class="card faq-item">
+                        <button class="faq-question">
+                            <span>Как обеспечивается безопасность пользователей?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Мы используем многоуровневую систему проверки: верификацию по номеру телефона, модерацию контента, автоматический анализ переписок на предмет подозрительной активности. Также есть кнопка экстренной помощи в приложении.</p>
+                        </div>
                     </div>
                     
-                    <div class="quantum-footer-col">
-                        <h3 class="quantum-footer-title">Контакты</h3>
-                        
-                        <ul class="quantum-footer-contacts">
-                            <li>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M4 4H16V16H4V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M4 4L10 10L16 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <a href="mailto:hello@lumi.quantum">hello@lumi.quantum</a>
-                            </li>
-                            
-                            <li>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M18 14V16C18 16.5304 17.7893 17.0391 17.4142 17.4142C17.0391 17.7893 16.5304 18 16 18H4C3.46957 18 2.96086 17.7893 2.58579 17.4142C2.21071 17.0391 2 16.5304 2 16V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M10 14H10.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M6 14H6.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M14 14H14.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M2 4H18V10C18 10.5304 17.7893 11.0391 17.4142 11.4142C17.0391 11.7893 16.5304 12 16 12H4C3.46957 12 2.96086 11.7893 2.58579 11.4142C2.21071 11.0391 2 10.5304 2 10V4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                <a href="tel:+78005553535">8 (800) 555-35-35</a>
-                            </li>
-                            
-                            <li>
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                                    <path d="M18 8C18 4.68629 15.3137 2 12 2C8.68629 2 6 4.68629 6 8C6 13 12 18 12 18C12 18 18 13 18 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M12 10C13.1046 10 14 9.10457 14 8C14 6.89543 13.1046 6 12 6C10.8954 6 10 6.89543 10 8C10 9.10457 10.8954 10 12 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                                Москва, ул. Квантовая, 42
-                            </li>
-                        </ul>
+                    <div class="card faq-item">
+                        <button class="faq-question">
+                            <span>Можно ли отменить Premium подписку?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Да, вы можете отменить подписку в любой момент в настройках профиля. После отмены вы сохраните Premium статус до конца оплаченного периода.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card faq-item">
+                        <button class="faq-question">
+                            <span>Как работают чат-квесты?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Чат-квесты — это игровые сценарии общения с заданиями и вопросами, которые помогают вам и вашему собеседнику лучше узнать друг друга. Они особенно полезны, если вы не знаете, с чего начать разговор.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA секция -->
+        <section class="section cta">
+            <div class="container">
+                <div class="cta-card card">
+                    <div class="cta-content">
+                        <h2 class="cta-title">Готовы найти свою идеальную пару?</h2>
+                        <p class="cta-text">Присоединяйтесь к миллионам пользователей, которые уже нашли любовь с LUMI.</p>
+                        <div class="cta-buttons">
+                            <a href="#signup" class="btn btn-primary btn-lg ripple" data-action="signup">
+                                <i class="fas fa-heart mr-1"></i> Начать бесплатно
+                            </a>
+                            <a href="#premium" class="btn btn-outline btn-lg ripple">
+                                <i class="fas fa-crown mr-1"></i> Попробовать Premium
+                            </a>
+                        </div>
+                    </div>
+                    <div class="cta-image">
+                        <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" 
+                             alt="Счастливая пара" 
+                             loading="lazy"
+                             width="634"
+                             height="951">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Поддержка -->
+        <section class="section donation" id="donation">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Поддержите развитие</span>
+                    <h2 class="section-title">Поддержите LUMI</h2>
+                    <p class="section-description">Мы существуем благодаря вам! Каждое пожертвование делает сервис лучше.</p>
+                </div>
+                
+                <div class="donation-card card">
+                    <p>LUMI остаётся бесплатным для всех пользователей. Если вам нравится сервис, вы можете поддержать его развитие.</p>
+                    
+                    <div class="donation-amounts">
+                        <button class="btn amount-btn">100 ₽</button>
+                        <button class="btn amount-btn">300 ₽</button>
+                        <button class="btn amount-btn">500 ₽</button>
+                        <button class="btn amount-btn">1,000 ₽</button>
+                        <button class="btn amount-btn">Другая сумма</button>
+                    </div>
+                    
+                    <div class="donation-features">
+                        <div class="donation-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Ускорение серверов для более быстрой работы</span>
+                        </div>
+                        <div class="donation-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Разработка новых функций (голосовые чаты, видео-знакомства)</span>
+                        </div>
+                        <div class="donation-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Улучшение системы безопасности и модерации</span>
+                        </div>
+                        <div class="donation-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Эксклюзивный значок в профиле</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://www.donationalerts.com/r/figases_gamer" class="btn donation-btn ripple" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-heart mr-1"></i> Поддержать проект
+                    </a>
+                    
+                    <p class="donation-note">После доната напишите нам — мы добавим вам эксклюзивный значок!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Футер -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <a href="#" class="footer-logo">LUMI</a>
+                        <p class="footer-text">Современный сервис для осознанных знакомств, где технологии помогают людям находить друг друга.</p>
+                        <div class="footer-apps">
+                            <a href="#" class="app-store-btn">
+                                <img src="https://via.placeholder.com/135x40?text=App+Store" alt="Download on App Store" loading="lazy" width="135" height="40">
+                            </a>
+                            <a href="#" class="google-play-btn">
+                                <img src="https://via.placeholder.com/135x40?text=Google+Play" alt="Get it on Google Play" loading="lazy" width="135" height="40">
+                            </a>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="VKontakte"><i class="fab fa-vk"></i></a>
+                            <a href="#" class="social-link" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3 class="footer-title">LUMI</h3>
+                        <div class="footer-links">
+                            <a href="#" class="footer-link">О нас</a>
+                            <a href="#" class="footer-link">Как это работает</a>
+                            <a href="#" class="footer-link">Преимущества</a>
+                            <a href="#" class="footer-link">Отзывы</a>
+                            <a href="#" class="footer-link">Значки</a>
+                            <a href="#" class="footer-link">Карьера</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3 class="footer-title">Помощь</h3>
+                        <div class="footer-links">
+                            <a href="#" class="footer-link">Центр поддержки</a>
+                            <a href="#" class="footer-link">Безопасность</a>
+                            <a href="#" class="footer-link">Правила</a>
+                            <a href="#" class="footer-link">Конфиденциальность</a>
+                            <a href="#" class="footer-link">Условия</a>
+                            <a href="#" class="footer-link">FAQ</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h3 class="footer-title">Контакты</h3>
+                        <div class="footer-links">
+                            <a href="mailto:hello@lumi.app" class="footer-link"><i class="fas fa-envelope mr-1"></i> hello@lumi.app</a>
+                            <a href="tel:+71234567890" class="footer-link"><i class="fas fa-phone mr-1"></i> +7 (123) 456-78-90</a>
+                            <a href="#" class="footer-link"><i class="fas fa-map-marker-alt mr-1"></i> Москва, ул. Примерная, 123</a>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="quantum-footer-bottom">
-                    <div class="quantum-footer-copyright">
-                        © 2023 LUMI Quantum. Все права защищены.
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>&copy; 2023 LUMI. Все права защищены.</p>
                     </div>
-                    
-                    <div class="quantum-footer-links">
-                        <a href="#" class="quantum-footer-link">Политика конфиденциальности</a>
-                        <a href="#" class="quantum-footer-link">Условия использования</a>
-                        <a href="#" class="quantum-footer-link">Правовая информация</a>
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link">Условия использования</a>
+                        <a href="#" class="legal-link">Политика конфиденциальности</a>
+                        <a href="#" class="legal-link">Политика cookies</a>
                     </div>
                 </div>
             </div>
         </footer>
-    </div>
-    
-    <!-- Quantum Modals -->
-    <div class="quantum-modal" id="quantumSignupModal">
-        <div class="quantum-modal-overlay" data-quantum-modal-close></div>
-        
-        <div class="quantum-modal-content">
-            <button class="quantum-modal-close" data-quantum-modal-close aria-label="Закрыть">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            
-            <div class="quantum-modal-header">
-                <h2 class="quantum-modal-title">Начните квантовое путешествие</h2>
-                <p class="quantum-modal-description">7 дней бесплатного премиум-доступа</p>
-            </div>
-            
-            <form class="quantum-modal-form">
-                <div class="quantum-form-group">
-                    <label for="signup-name" class="quantum-form-label">Ваше имя</label>
-                    <input type="text" id="signup-name" class="quantum-form-input" placeholder="Как вас зовут?" required>
-                </div>
-                
-                <div class="quantum-form-group">
-                    <label for="signup-email" class="quantum-form-label">Email</label>
-                    <input type="email" id="signup-email" class="quantum-form-input" placeholder="Ваш email" required>
-                </div>
-                
-                <div class="quantum-form-group">
-                    <label for="signup-password" class="quantum-form-label">Пароль</label>
-                    <input type="password" id="signup-password" class="quantum-form-input" placeholder="Не менее 8 символов" required minlength="8">
-                </div>
-                
-                <button type="submit" class="quantum-button quantum-button--primary quantum-button--block">
-                    Начать бесплатно
-                </button>
-                
-                <div class="quantum-form-footer">
-                    Уже есть аккаунт? <button type="button" class="quantum-button quantum-button--text" data-quantum-modal="login">Войти</button>
-                </div>
-            </form>
-            
-            <div class="quantum-modal-social">
-                <p class="quantum-modal-social-text">Или войдите через</p>
-                
-                <div class="quantum-modal-social-buttons">
-                    <button type="button" class="quantum-button quantum-button--social quantum-button--google">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M19.805 10.23C19.805 9.55046 19.7499 8.86721 19.6327 8.19824H10.2V12.0492H15.6014C15.3773 13.2911 14.6572 14.3898 13.6027 15.0879V17.5866H16.8252C18.7176 15.8449 19.805 13.2728 19.805 10.23Z" fill="#4285F4"/>
-                            <path d="M10.2 20.0006C12.897 20.0006 15.1715 19.1151 16.8286 17.5866L13.6061 15.0879C12.7096 15.6979 11.5521 16.0433 10.2036 16.0433C7.59432 16.0433 5.38268 14.2832 4.58904 11.9169H1.26367V14.4927C2.96215 17.8695 6.4186 20.0006 10.2 20.0006Z" fill="#34A853"/>
-                            <path d="M4.58554 11.9169C4.16655 10.6749 4.16655 9.33008 4.58554 8.08811V5.51233H1.26366C-0.154774 8.33798 -0.154774 11.667 1.26366 14.4927L4.58554 11.9169Z" fill="#FBBC05"/>
-                            <path d="M10.2 3.95805C11.6256 3.936 13.0034 4.47247 14.036 5.45722L16.891 2.60218C15.0834 0.904599 12.6838 -0.0287217 10.2 0.000673888C6.4186 0.000673888 2.96215 2.13185 1.26367 5.51234L4.58554 8.08812C5.37567 5.71811 7.5911 3.95805 10.2 3.95805Z" fill="#EA4335"/>
-                        </svg>
-                        Google
+
+        <!-- Кнопка темы -->
+        <button class="theme-toggle ripple" id="themeToggle" aria-label="Переключить тему">
+            <i class="fas fa-moon"></i>
+        </button>
+
+        <!-- Кнопка "Наверх" -->
+        <button class="scroll-top ripple" id="scrollTop" aria-label="Наверх">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+
+        <!-- Модальное окно регистрации -->
+        <div class="modal" id="signupModal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content card">
+                <button class="modal-close" id="modalClose" aria-label="Закрыть">&times;</button>
+                <h2 class="modal-title">Присоединяйтесь к LUMI</h2>
+                <form class="modal-form" id="signupForm">
+                    <div class="form-group">
+                        <label for="name">Ваше имя</label>
+                        <input type="text" id="name" placeholder="Как вас зовут?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Ваш email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" placeholder="Не менее 8 символов" minlength="8" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Ваш пол</label>
+                        <select id="gender" required>
+                            <option value="" disabled selected>Выберите пол</option>
+                            <option value="male">Мужской</option>
+                            <option value="female">Женский</option>
+                            <option value="other">Другой</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">Дата рождения</label>
+                        <input type="date" id="birthdate" required>
+                    </div>
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">Я принимаю <a href="#">Условия использования</a> и <a href="#">Политику конфиденциальности</a></label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span class="btn-text">Создать аккаунт</span>
+                        <span class="btn-loader">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
                     </button>
-                    
-                    <button type="button" class="quantum-button quantum-button--social quantum-button--facebook">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M18.3334 10.0003C18.3334 5.39795 14.6024 1.66699 10 1.66699C5.39765 1.66699 1.66669 5.39795 1.66669 10.0003C1.66669 14.0462 4.71427 17.4609 8.66669 18.167V12.5003H6.66669V10.0003H8.66669V8.33366C8.66669 6.49271 10.159 5.00033 12 5.00033H14.1667V7.50033H12.6667C12.2064 7.50033 11.8334 7.87332 11.8334 8.33366V10.0003H14.1667V12.5003H11.8334V18.2537C15.7711 17.8375 18.3334 14.3733 18.3334 10.0003Z" fill="#1877F2"/>
-                            <path d="M13.8334 12.5003L14.1667 10.0003H11.8334V8.33366C11.8334 7.87332 12.2064 7.50033 12.6667 7.50033H14.1667V5.00033H12C10.159 5.00033 8.66669 6.49271 8.66669 8.33366V10.0003H6.66669V12.5003H8.66669V18.167C9.17192 18.2557 9.68342 18.3003 10.1667 18.3003C10.4834 18.3003 10.7934 18.2809 11.1 18.247V12.5003H13.8334Z" fill="white"/>
-                        </svg>
-                        Facebook
-                    </button>
-                    
-                    <button type="button" class="quantum-button quantum-button--social quantum-button--vk">
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                            <path d="M10 20C15.5228 20 20 15.5228 20 10C20 4.47715 15.5228 0 10 0C4.47715 0 0 4.47715 0 10C0 15.5228 4.47715 20 10 20Z" fill="#07F"/>
-                            <path d="M11.1266 14.0002C5.90664 14.0002 3.33331 10.1668 3.19998 6.00016H5.53331C5.63331 9.1335 7.26664 10.6668 8.73331 11.0002V6.00016H10.9333V8.50016C12.3666 8.36683 13.8666 6.9335 14.3333 5.00016H16.4666C16.1333 7.30016 14.5333 9.00016 13.4666 9.76683C14.5333 10.4002 16.2666 11.8002 16.8 14.0002H14.4C13.9666 12.2668 12.6 11.0002 11.1333 10.8668V14.0002H11.1266Z" fill="white"/>
-                        </svg>
-                        ВКонтакте
-                    </button>
+                    <div class="form-footer">
+                        Уже есть аккаунт? <a href="#login" class="text-link">Войти</a>
+                    </div>
+                </form>
+                <div class="social-auth">
+                    <p>Или войдите через</p>
+                    <div class="social-buttons">
+                        <button class="btn social-btn google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button class="btn social-btn facebook">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                        <button class="btn social-btn vk">
+                            <i class="fab fa-vk"></i> ВКонтакте
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Quantum Video Modal -->
-    <div class="quantum-video-modal" id="quantumVideoModal">
-        <div class="quantum-video-modal-overlay" data-quantum-modal-close></div>
-        
-        <div class="quantum-video-modal-content">
-            <button class="quantum-video-modal-close" data-quantum-modal-close aria-label="Закрыть">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                    <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </button>
-            
-            <div class="quantum-video-container">
-                <iframe id="quantumVideoIframe" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+
+        <!-- Модальное окно входа -->
+        <div class="modal" id="loginModal">
+            <div class="modal-overlay"></div>
+            <div class="modal-content card">
+                <button class="modal-close" id="loginModalClose" aria-label="Закрыть">&times;</button>
+                <h2 class="modal-title">Вход в LUMI</h2>
+                <form class="modal-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="Ваш email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Пароль</label>
+                        <input type="password" id="loginPassword" placeholder="Ваш пароль" required>
+                    </div>
+                    <div class="form-group form-checkbox">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Запомнить меня</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span class="btn-text">Войти</span>
+                        <span class="btn-loader">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+                    <div class="form-footer">
+                        Нет аккаунта? <a href="#signup" class="text-link">Зарегистрироваться</a>
+                    </div>
+                </form>
+                <div class="social-auth">
+                    <p>Или войдите через</p>
+                    <div class="social-buttons">
+                        <button class="btn social-btn google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button class="btn social-btn facebook">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                        <button class="btn social-btn vk">
+                            <i class="fab fa-vk"></i> ВКонтакте
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Уведомление о cookies -->
+        <div class="cookie-consent" id="cookieConsent">
+            <div class="cookie-content">
+                <p>Мы используем cookies для улучшения работы сервиса. Продолжая использовать LUMI, вы соглашаетесь с нашей <a href="#">Политикой cookies</a>.</p>
+            </div>
+            <div class="cookie-actions">
+                <button class="btn btn-sm btn-outline" id="cookieDecline">Отклонить</button>
+                <button class="btn btn-sm btn-primary" id="cookieAccept">Принять</button>
             </div>
         </div>
     </div>
-    
-    <!-- Quantum Scripts -->
-    <script src="/js/quantum.js" defer></script>
-    
-    <!-- Quantum Service Worker -->
+
+    <!-- Non-critical CSS -->
+    <style class="non-critical">
+        /* ==========================================================================
+           Non-critical CSS
+           ========================================================================== */
+        /* Utility classes */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 48rem;
+            margin: 0 auto 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4rem;
+            height: 0.25rem;
+            background: var(--gradient);
+            border-radius: 0.125rem;
+        }
+
+        .section-subtitle {
+            display: block;
+            font-size: 1rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .text-gradient {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .text-primary {
+            color: var(--primary);
+        }
+
+        .text-secondary {
+            color: var(--secondary);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .bg-primary {
+            background: var(--primary);
+        }
+
+        .bg-secondary {
+            background: var(--secondary);
+        }
+
+        .bg-accent {
+            background: var(--accent);
+        }
+
+        .mr-1 {
+            margin-right: 0.25rem;
+        }
+
+        .mb-0 {
+            margin-bottom: 0;
+        }
+
+        /* Buttons */
+        .btn {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            border: 2px solid transparent;
+            transition: var(--transition);
+        }
+
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary-dark);
+            transform: translateY(-3px);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Cards */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-0.5rem);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-1rem); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0.8); opacity: 1; }
+            100% { transform: scale(1.2); opacity: 0; }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Header */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            position: relative;
+            padding: 0.5rem 0;
+            color: var(--text);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Hero section */
+        .hero-media {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50%;
+            max-width: 50rem;
+            z-index: 1;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+            object-fit: cover;
+        }
+
+        .hero-app-preview {
+            position: absolute;
+            bottom: -5rem;
+            right: 5rem;
+            width: 18rem;
+            height: 36rem;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateY(-15deg) rotateX(10deg);
+            border: 1rem solid var(--card-bg);
+        }
+
+        .app-screenshot {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .stat-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        /* Trust section */
+        .trust-section {
+            padding: 2rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+
+        .trust-logos img {
+            height: 2.5rem;
+            width: auto;
+            opacity: 0.7;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+
+        .trust-logos img:hover {
+            opacity: 1;
+            filter: grayscale(0);
+        }
+
+        /* Features */
+        .features {
+            background: var(--bg-secondary);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            padding: 2.5rem 2rem;
+            height: 100%;
+        }
+
+        .feature-icon {
+            width: 5rem;
+            height: 5rem;
+            margin: 0 auto 1.5rem;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            box-shadow: 0 1rem 2rem rgba(108, 92, 231, 0.2);
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .feature-text {
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 500;
+            margin-top: auto;
+            text-align: center;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .feature-link i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-link:hover i {
+            transform: translateX(0.25rem);
+        }
+
+        /* How it works */
+        .how-it-works {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .how-it-works::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%2300CEC9" stroke-width="0.3" stroke-dasharray="3,3"/></svg>') repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            max-width: 50rem;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .step-number {
+            width: 3.75rem;
+            height: 3.75rem;
+            flex-shrink: 0;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 1rem 2rem rgba(108, 92, 231, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .step-text {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .step-image {
+            border-radius: var(--radius-small);
+            overflow: hidden;
+        }
+
+        .step-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 1.875rem;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* Video presentation */
+        .video-presentation {
+            padding: 6rem 0;
+        }
+
+        .video-container {
+            max-width: 56rem;
+            margin: 0 auto;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .video-placeholder {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-placeholder img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .video-play-btn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--primary-dark);
+        }
+
+        .video-caption {
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .video-caption h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-caption p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: var(--bg-secondary);
+        }
+
+        .testimonials-slider {
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .testimonials-track {
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonials-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .testimonial-card {
+            min-width: 22rem;
+            scroll-snap-align: start;
+            padding: 2.5rem;
+            position: relative;
+            flex: 0 0 auto;
+            width: 100%;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1.25rem;
+            left: 1.25rem;
+            font-size: 5rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-light);
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .testimonial-rating {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-rating i {
+            margin-right: 0.25rem;
+        }
+
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-light);
+            flex-shrink: 0;
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.875rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-location {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+        }
+
+        .author-location i {
+            margin-right: 0.25rem;
+            font-size: 0.625rem;
+        }
+
+        .testimonials-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-arrow {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            color: var(--text);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-arrow:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .testimonial-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .testimonial-dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background: var(--bg-tertiary);
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .testimonial-dot.active {
+            background: var(--gradient);
+            transform: scale(1.2);
+        }
+
+        /* Badges */
+        .badges {
+            text-align: center;
+        }
+
+        .badges-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .badge-card {
+            padding: 2rem 1.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient);
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge-name {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge-description {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1rem;
+        }
+
+        .badge-progress {
+            height: 0.25rem;
+            background: var(--bg-tertiary);
+            border-radius: 0.125rem;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--gradient);
+            transition: width 1s ease;
+        }
+
+        /* Premium section */
+        .pricing-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            padding: 2rem;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--primary);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -0.75rem;
+            right: 2rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--bg-tertiary);
+        }
+
+        .pricing-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-price {
+            margin-bottom: 0.5rem;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .price-currency {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .price-period {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        .pricing-description {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .pricing-features {
+            margin-bottom: 2rem;
+        }
+
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .pricing-features i {
+            color: var(--primary);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        /* FAQ */
+        .faq-accordion {
+            max-width: 50rem;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 2rem;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 2rem;
+        }
+
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        /* CTA section */
+        .cta {
+            padding: 6rem 0;
+        }
+
+        .cta-card {
+            display: flex;
+            align-items: center;
+            background: var(--gradient);
+            color: white;
+            overflow: hidden;
+            max-width: 80rem;
+            margin: 0 auto;
+        }
+
+        .cta-content {
+            flex: 1;
+            padding: 4rem;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .cta-text {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cta-image {
+            flex: 0 0 40%;
+            position: relative;
+            align-self: stretch;
+        }
+
+        .cta-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Donation section */
+        .donation {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .donation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="5,5"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .donation .section-title {
+            color: white;
+        }
+
+        .donation .section-title::after {
+            background: white;
+        }
+
+        .donation .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .donation-card {
+            max-width: 40rem;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+        }
+
+        .donation-amounts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .amount-btn {
+            min-width: 6rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: var(--transition);
+        }
+
+        .amount-btn:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        .donation-features {
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .donation-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .donation-feature i {
+            color: var(--accent-light);
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .donation-btn {
+            background: white;
+            color: var(--primary);
+            font-weight: 700;
+            padding: 1rem 2.5rem;
+            margin-top: 1rem;
+        }
+
+        .donation-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+        }
+
+        .donation-note {
+            margin-top: 1.5rem;
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--bg-tertiary);
+            padding: 5rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            color: var(--text);
+        }
+
+        .footer-text {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .footer-apps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            color: var(--text);
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 2.5rem;
+            height: 2px;
+            background: var(--gradient);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .footer-link {
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .footer-link:hover {
+            color: var(--primary);
+            padding-left: 0.5rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--bg-secondary);
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-copyright {
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .legal-link {
+            color: var(--text-light);
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+
+        .legal-link:hover {
+            color: var(--primary);
+        }
+
+        /* Theme toggle */
+        .theme-toggle {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            background: var(--gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            box-shadow: 0 0.5rem 1rem rgba(108, 92, 231, 0.3);
+            border: none;
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 0.75rem 1.5rem rgba(108, 92, 231, 0.4);
+        }
+
+        /* Scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 6rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            border: none;
+            z-index: 998;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-0.5rem);
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1001;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: 1rem;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            position: relative;
+            z-index: 1;
+            max-width: 32rem;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.25rem;
+            right: 1.25rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: var(--transition);
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+            background: var(--bg-tertiary);
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            padding: 2rem 2rem 0;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            padding: 0 2rem 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-group label {
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 0.875rem 1rem;
+            border-radius: var(--radius-small);
+            border: 1px solid var(--bg-tertiary);
+            background: var(--bg-secondary);
+            transition: var(--transition);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 77, 141, 0.2);
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .form-checkbox input {
+            margin-top: 0.25rem;
+        }
+
+        .form-checkbox label {
+            font-weight: 400;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .form-checkbox a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .text-link {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        .social-auth {
+            margin-top: 1.5rem;
+            text-align: center;
+            padding: 0 2rem 2rem;
+            border-top: 1px solid var(--bg-tertiary);
+        }
+
+        .social-auth p {
+            position: relative;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.875rem;
+        }
+
+        .social-auth p::before,
+        .social-auth p::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: var(--bg-tertiary);
+        }
+
+        .social-auth p::before {
+            left: 0;
+        }
+
+        .social-auth p::after {
+            right: 0;
+        }
+
+        .social-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 0.875rem;
+            border-radius: var(--radius-small);
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid var(--bg-tertiary);
+            background: var(--bg-secondary);
+        }
+
+        .social-btn.google {
+            color: var(--text);
+        }
+
+        .social-btn.google:hover {
+            background: #f1f1f1;
+        }
+
+        .social-btn.facebook {
+            background: #1877F2;
+            color: white;
+            border-color: #1877F2;
+        }
+
+        .social-btn.facebook:hover {
+            background: #166FE5;
+        }
+
+        .social-btn.vk {
+            background: #0077FF;
+            color: white;
+            border-color: #0077FF;
+        }
+
+        .social-btn.vk:hover {
+            background: #0066DD;
+        }
+
+        .btn-loader {
+            display: none;
+        }
+
+        .btn.loading .btn-text {
+            display: none;
+        }
+
+        .btn.loading .btn-loader {
+            display: block;
+        }
+
+        /* Cookie consent */
+        .cookie-consent {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-hover);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 997;
+            transform: translateY(120%);
+            transition: transform 0.5s ease;
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+
+        .cookie-consent.active {
+            transform: translateY(0);
+        }
+
+        .cookie-content {
+            flex: 1;
+        }
+
+        .cookie-content p {
+            margin-bottom: 0;
+            font-size: 0.875rem;
+            color: var(--text-light);
+        }
+
+        .cookie-content a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: flex-end;
+        }
+
+        /* Ripple effect */
+        .ripple {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ripple::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+
+        .ripple:focus:not(:active)::after {
+            animation: ripple 0.6s ease-out;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .hero-media {
+                width: 45%;
+                opacity: 0.8;
+            }
+            
+            .cta-card {
+                flex-direction: column;
+            }
+            
+            .cta-image {
+                width: 100%;
+                height: 20rem;
+                flex: none;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section {
+                padding: 4rem 0;
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-media {
+                width: 50%;
+                opacity: 0.6;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .steps::before {
+                display: none;
+            }
+            
+            .step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .step-number {
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                width: 100%;
+                background: var(--card-bg);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: var(--transition);
+                z-index: 999;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .header-actions .btn {
+                display: none;
+            }
+
+            .hero {
+                text-align: center;
+                min-height: auto;
+                padding: 8rem 0 6rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-media {
+                display: none;
+            }
+
+            .hero-pattern {
+                width: 100%;
+                opacity: 0.05;
+            }
+
+            .testimonial-card {
+                min-width: 18rem;
+                padding: 1.5rem;
+            }
+            
+            .pricing-plans {
+                grid-template-columns: 1fr;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1.02);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section {
+                padding: 3rem 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .trust-logos {
+                gap: 1.5rem;
+            }
+            
+            .trust-logos img {
+                height: 1.5rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-nav {
+                flex-wrap: wrap;
+            }
+            
+            .donation-amounts {
+                gap: 0.75rem;
+            }
+            
+            .amount-btn {
+                min-width: 5rem;
+                padding: 0.75rem;
+            }
+            
+            .modal-form {
+                padding: 0 1.5rem 1.5rem;
+            }
+            
+            .modal-title {
+                padding: 1.5rem 1.5rem 0;
+                font-size: 1.5rem;
+            }
+            
+            .social-auth {
+                padding: 0 1.5rem 1.5rem;
+            }
+            
+            .cookie-consent {
+                left: 0.5rem;
+                right: 0.5rem;
+                bottom: 0.5rem;
+            }
+        }
+    </style>
+
+    <!-- Скрипты -->
     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').then(registration => {
-                    console.log('Quantum ServiceWorker зарегистрирован');
-                }).catch(err => {
-                    console.log('Quantum ServiceWorker ошибка:', err);
+        // Загрузка страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            // Показать контент после загрузки
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loadingScreen');
+                loadingScreen.style.opacity = '0';
+                
+                setTimeout(() => {
+                    loadingScreen.style.display = 'none';
+                    
+                    // Показать отложенный контент
+                    document.querySelectorAll('.non-critical').forEach(el => {
+                        el.style.display = 'block';
+                    });
+                    
+                    // Инициализация анимаций
+                    initAnimations();
+                    
+                    // Запуск анимации чисел
+                    animateNumbers();
+                    
+                    // Показать уведомление о cookies
+                    showCookieConsent();
+                }, 500);
+            }, 1500);
+            
+            // Инициализация функционала
+            initMobileMenu();
+            initThemeToggle();
+            initTestimonialsSlider();
+            initModals();
+            initScrollAnimations();
+            initRippleEffects();
+            initSmoothScroll();
+            initAccordion();
+            initScrollTop();
+        });
+
+        // Инициализация мобильного меню
+        function initMobileMenu() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                    '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                mobileMenuBtn.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+            });
+            
+            // Закрытие меню при клике на ссылку
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
                 });
             });
         }
-    </script>
-    
-    <!-- Quantum Analytics -->
-    <script>
-        window.quantum = window.quantum || {};
-        window.quantum.analytics = {
-            track: function(event, data) {
-                console.log('Quantum Analytics:', event, data);
+
+        // Инициализация переключения темы
+        function initThemeToggle() {
+            const themeToggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            
+            // Проверка сохранённой темы
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            html.setAttribute('data-theme', savedTheme);
+            
+            // Установка соответствующей иконки
+            themeToggle.innerHTML = savedTheme === 'light' ? 
+                '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+            
+            // Обработчик клика
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = html.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
                 
-                if (typeof gtag !== 'undefined') {
-                    gtag('event', event, data);
+                html.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                
+                themeToggle.innerHTML = newTheme === 'light' ? 
+                    '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+                
+                // Аналитика
+                trackEvent('theme_toggle', { theme: newTheme });
+            });
+        }
+
+        // Инициализация слайдера отзывов
+        function initTestimonialsSlider() {
+            const track = document.querySelector('.testimonials-track');
+            const slides = document.querySelectorAll('.testimonial-card');
+            const dots = document.querySelectorAll('.testimonial-dot');
+            const prevBtn = document.querySelector('.testimonial-prev');
+            const nextBtn = document.querySelector('.testimonial-next');
+            
+            let currentSlide = 0;
+            let slideWidth = slides[0].offsetWidth + 24; // включая gap
+            let autoSlideInterval;
+            
+            // Обновление позиции слайдера
+            const updateSlider = () => {
+                track.style.transition = 'transform 0.5s ease';
+                track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+                
+                // Обновление активной точки
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            };
+            
+            // Автоматическое перелистывание
+            const startAutoSlide = () => {
+                autoSlideInterval = setInterval(() => {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    updateSlider();
+                }, 5000);
+            };
+            
+            const stopAutoSlide = () => {
+                clearInterval(autoSlideInterval);
+            };
+            
+            // Переход к конкретному слайду
+            const goToSlide = (index) => {
+                currentSlide = index;
+                updateSlider();
+                stopAutoSlide();
+                startAutoSlide();
+            };
+            
+            // Обработчики событий
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateSlider();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateSlider();
+                stopAutoSlide();
+                startAutoSlide();
+            });
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => goToSlide(index));
+            });
+            
+            // Пауза при наведении
+            track.addEventListener('mouseenter', stopAutoSlide);
+            track.addEventListener('mouseleave', startAutoSlide);
+            
+            // Реакция на изменение размера окна
+            window.addEventListener('resize', () => {
+                slideWidth = slides[0].offsetWidth + 24;
+                updateSlider();
+            });
+            
+            // Запуск
+            startAutoSlide();
+            updateSlider();
+        }
+
+        // Инициализация модальных окон
+        function initModals() {
+            // Регистрация
+            const signupModal = document.getElementById('signupModal');
+            const modalClose = document.getElementById('modalClose');
+            const signupForm = document.getElementById('signupForm');
+            const signupBtn = document.getElementById('signupBtn');
+            
+            // Вход
+            const loginModal = document.getElementById('loginModal');
+            const loginModalClose = document.getElementById('loginModalClose');
+            const loginForm = document.getElementById('loginForm');
+            const loginBtn = document.getElementById('loginBtn');
+            
+            // Открытие модального окна регистрации
+            const openSignupModal = (e) => {
+                if (e) e.preventDefault();
+                signupModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+            
+            // Открытие модального окна входа
+            const openLoginModal = (e) => {
+                if (e) e.preventDefault();
+                loginModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+            
+            // Закрытие модального окна
+            const closeModal = () => {
+                signupModal.classList.remove('active');
+                loginModal.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+            
+            // Обработчики событий
+            signupBtn.addEventListener('click', openSignupModal);
+            loginBtn.addEventListener('click', openLoginModal);
+            
+            document.querySelectorAll('[data-action="signup"]').forEach(btn => {
+                btn.addEventListener('click', openSignupModal);
+            });
+            
+            modalClose.addEventListener('click', closeModal);
+            loginModalClose.addEventListener('click', closeModal);
+            
+            // Закрытие по клику на оверлей
+            signupModal.addEventListener('click', (e) => {
+                if (e.target === signupModal) closeModal();
+            });
+            
+            loginModal.addEventListener('click', (e) => {
+                if (e.target === loginModal) closeModal();
+            });
+            
+            // Закрытие по ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && 
+                    (signupModal.classList.contains('active') || loginModal.classList.contains('active'))) {
+                    closeModal();
                 }
+            });
+            
+            // Обработка формы регистрации
+            signupForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const submitBtn = signupForm.querySelector('button[type="submit"]');
+                submitBtn.classList.add('loading');
+                
+                // Имитация отправки формы
+                setTimeout(() => {
+                    submitBtn.classList.remove('loading');
+                    closeModal();
+                    
+                    // Показать уведомление об успешной регистрации
+                    showNotification('Регистрация прошла успешно! Добро пожаловать в LUMI.');
+                    
+                    // Аналитика
+                    trackEvent('signup_success');
+                }, 2000);
+            });
+            
+            // Обработка формы входа
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const submitBtn = loginForm.querySelector('button[type="submit"]');
+                submitBtn.classList.add('loading');
+                
+                // Имитация отправки формы
+                setTimeout(() => {
+                    submitBtn.classList.remove('loading');
+                    closeModal();
+                    
+                    // Показать уведомление об успешном входе
+                    showNotification('Вход выполнен успешно! Рады снова видеть вас.');
+                    
+                    // Аналитика
+                    trackEvent('login_success');
+                }, 2000);
+            });
+        }
+
+        // Инициализация аккордеона FAQ
+        function initAccordion() {
+            const items = document.querySelectorAll('.faq-item');
+            
+            items.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    const isOpen = question.classList.toggle('active');
+                    
+                    if (isOpen) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = '0';
+                    }
+                    
+                    // Закрытие других элементов
+                    items.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.querySelector('.faq-question').classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = '0';
+                        }
+                    });
+                });
+            });
+        }
+
+        // Инициализация анимаций при скролле
+        function initScrollAnimations() {
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll(
+                    '.feature-card, .step, .badge-card, .testimonial-card, .pricing-card'
+                );
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.3;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Инициализация анимаций
+            document.querySelectorAll(
+                '.feature-card, .step, .badge-card, .testimonial-card, .pricing-card'
+            ).forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            window.addEventListener('load', animateOnScroll);
+            window.addEventListener('scroll', animateOnScroll);
+        }
+
+        // Инициализация ripple-эффектов
+        function initRippleEffects() {
+            const buttons = document.querySelectorAll('.ripple');
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Создание элемента ripple
+                    const ripple = document.createElement('span');
+                    ripple.classList.add('ripple-effect');
+                    
+                    // Позиционирование
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    // Установка стилей
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    
+                    // Добавление элемента
+                    this.appendChild(ripple);
+                    
+                    // Удаление после анимации
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 1000);
+                });
+            });
+        }
+
+        // Инициализация плавного скролла
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Инициализация кнопки "Наверх"
+        function initScrollTop() {
+            const scrollTopBtn = document.getElementById('scrollTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.classList.add('active');
+                } else {
+                    scrollTopBtn.classList.remove('active');
+                }
+            });
+            
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Анимация чисел
+        function animateNumbers() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateNumbers, 1);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            });
+        }
+
+        // Уведомление о cookies
+        function showCookieConsent() {
+            const cookieConsent = document.getElementById('cookieConsent');
+            const acceptBtn = document.getElementById('cookieAccept');
+            const declineBtn = document.getElementById('cookieDecline');
+            
+            // Проверка, было ли уже принято решение
+            if (localStorage.getItem('cookieConsent') === null) {
+                setTimeout(() => {
+                    cookieConsent.classList.add('active');
+                }, 2000);
             }
-        };
+            
+            // Обработчики кнопок
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'accepted');
+                cookieConsent.classList.remove('active');
+                trackEvent('cookie_consent', { action: 'accepted' });
+            });
+            
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem('cookieConsent', 'declined');
+                cookieConsent.classList.remove('active');
+                trackEvent('cookie_consent', { action: 'declined' });
+            });
+        }
+
+        // Показать уведомление
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                bottom: 2rem;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--primary);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: var(--radius);
+                box-shadow: var(--shadow-hover);
+                z-index: 9999;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.style.opacity = '1';
+                
+                setTimeout(() => {
+                    notification.style.opacity = '0';
+                    
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 3000);
+            }, 100);
+        }
+
+        // Инициализация всех анимаций
+        function initAnimations() {
+            // Анимация float для элементов
+            const floatElements = document.querySelectorAll('.feature-icon, .badge-icon');
+            floatElements.forEach((el, index) => {
+                el.style.animation = `float 6s ease-in-out ${index * 0.2}s infinite`;
+            });
+            
+            // Анимация pulse для кнопок
+            const pulseElements = document.querySelectorAll('.btn-primary, .donation-btn');
+            pulseElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    el.style.animation = 'pulse 2s ease-in-out infinite';
+                });
+                el.addEventListener('mouseleave', () => {
+                    el.style.animation = '';
+                });
+            });
+        }
+
+        // Аналитика (пример)
+        function trackEvent(eventName, eventData = {}) {
+            // В реальном проекте здесь будет интеграция с Google Analytics или другим сервисом
+            console.log('Event tracked:', eventName, eventData);
+            
+            // Пример отправки данных
+            if (typeof gtag !== 'undefined') {
+                gtag('event', eventName, eventData);
+            }
+        }
+
+        // Оптимизация производительности
+        if ('IntersectionObserver' in window) {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.removeAttribute('loading');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            }, {
+                rootMargin: '200px 0px'
+            });
+            
+            lazyImages.forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+
+        // Service Worker регистрация
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful');
+                }).catch(err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+
+        // Web App Manifest
+        if ('beforeinstallprompt' in window) {
+            window.addEventListener('beforeinstallprompt', (e) => {
+                e.preventDefault();
+                const installButton = document.createElement('button');
+                installButton.textContent = 'Установить LUMI';
+                installButton.className = 'btn btn-accent';
+                installButton.style.cssText = `
+                    position: fixed;
+                    bottom: 6rem;
+                    right: 2rem;
+                    z-index: 999;
+                    animation: pulse 2s infinite;
+                `;
+                
+                installButton.addEventListener('click', () => {
+                    e.prompt();
+                    installButton.style.display = 'none';
+                    trackEvent('install_prompt', { action: 'shown' });
+                });
+                
+                document.body.appendChild(installButton);
+                
+                // Скрыть кнопку через 30 секунд
+                setTimeout(() => {
+                    installButton.style.display = 'none';
+                }, 30000);
+            });
+        }
     </script>
 </body>
 </html>
